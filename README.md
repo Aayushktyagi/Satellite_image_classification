@@ -7,7 +7,7 @@ Sat 4  and Sat 6 dataset contain 4 channel(r,g,b,near Infrared) Satellite images
 - Sat4 dataset
 Class wise distribution of train(400000) and test images(100000) is as following:
 
-Class labels :'barren land' , 'trees' , 'grassland','none'
+Class labels :`barren land` , `trees` , `grassland`,`none`
 
 ![Classwise distribution train](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Train_data_sat4.png)
 
@@ -16,7 +16,7 @@ Class labels :'barren land' , 'trees' , 'grassland','none'
 - Sat 6 dataset
 Class wise distribution of train(324000) and test(81000) is as following:
 
-Class labesl : 'building','barren land','trees','grassland','roads','water'
+Class labesl : `building`,`barren land`,`trees`,`grassland`,`roads`,`water`
 
 ![Classwise distribution train](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Train_data_sat6.png)
 
