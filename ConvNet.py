@@ -1,11 +1,11 @@
 '''
 convolutional neural network
 '''
-
+import os
 import tensorflow as tf
 from tensorflow.keras.callbacks import Callback
 from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input , Dense,Conv2D,MaxPooling2D,Dropout
+from tensorflow.keras.layers import Input , Dense,Conv2D,MaxPooling2D,Dropout,Flatten
 import matplotlib.pyplot as plt
 
 
@@ -14,17 +14,17 @@ class ConvNet(object):
         input_layer = Input(shape=(28,28,4))
         layer_1 = Conv2D(8,(2,2),activation = 'relu',padding = 'same')(input_layer)
         layer_1 = MaxPooling2D((2,2),padding ='same')(layer_1)
-        layer_1 = Dropout(0.3)
-        layer_2 = Conv2D(16,(2,2),activation = 'relu',paddig = 'same')(layer_2)
+        layer_1 = Dropout(0.3)(layer_1)
+        layer_2 = Conv2D(16,(2,2),activation = 'relu',padding = 'same')(layer_1)
         layer_2 = MaxPooling2D((2,2),padding = 'same')(layer_2)
-        layer_2 = Dropout(0.3)
-        layer_3 = Conv2D(32,(2,2),activation = 'relu',padding= 'same')(layer_3)
+        layer_2 = Dropout(0.3)(layer_2)
+        layer_3 = Conv2D(32,(2,2),activation = 'relu',padding= 'same')(layer_2)
         layer_3 = MaxPooling2D((2,2),padding = 'same')(layer_3)
-        layer_3 = Dropout(0.3)
+        layer_3 = Dropout(0.3)(layer_3)
         layer_flatten = Flatten()(layer_3)
-        layer_4 = Dense(784, activation ='relu')(layer_3)
-        layer_4 = Dropout(0.3)
-        output_layer = Dense(10,activation='softmax')(layer_4)
+        layer_4 = Dense(784, activation ='relu')(layer_flatten)
+        layer_4 = Dropout(0.3)(layer_4)
+        output_layer = Dense(4,activation='softmax')(layer_4)
 
         self._model = Model(input_layer,output_layer)
         self._model.compile(optimizer = 'adam' , loss = 'categorical_crossentropy',metrics = ['accuracy'])
@@ -32,14 +32,14 @@ class ConvNet(object):
 
     def train(self, X_train,Y_train,X_test,Y_test,batchsize,epochs,checkpoint_path):
 
-        checkpoint_dir = os.path.dirname(checkpoint_path)
+        #checkpoint_dir = os.path.dirname(checkpoint_path)
 
         # Create checkpoint callback
         cp_callback = tf.keras.callbacks.ModelCheckpoint(checkpoint_path,
                                             save_weights_only=True,
-                                            verbose=1,period=10)
+                                            verbose=1,period=1)
         self._model.fit(X_train,Y_train,
-                        batchsize = batchsize,
+                        batch_size = batchsize,
                         epochs = epochs,
                         validation_data = (X_test,
                                             Y_test),

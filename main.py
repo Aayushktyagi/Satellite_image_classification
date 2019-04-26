@@ -19,7 +19,7 @@ def process(args):
     print("Dataset : Train:{}:{},Test:{}:{}".format(np.shape(X_train),np.shape(Y_train),np.shape(X_test),np.shape(Y_test)))
     if args.visualize_data == 'True':
         Prep.visualize_data()
-    model.train_model(X_train,Y_train,X_test,Y_test,args.mode,args.epochs)
+    model.train_model(X_train,Y_train,X_test,Y_test,args.mode,args.epochs,args.batch_size,args.model_name,args.output)
 
 
 if __name__ == "__main__":
@@ -30,5 +30,6 @@ if __name__ == "__main__":
     parser.add_argument('--mode' , choices = ['train','inference'],default = 'train')
     parser.add_argument('--output' , help= 'path checkpoints will be saved',default='./weights/')
     parser.add_argument('--model_name',choices=['ConvNet','ResNet50','Xception','MobileNet','DenseNet121'],default='ConvNet')
+    parser.add_argument('--batch_size',help = 'Select batch size int value',type= int,default=16)
     args = parser.parse_args()
     process(args)
