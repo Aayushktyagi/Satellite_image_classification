@@ -24,17 +24,18 @@ class ConvNet(object):
         layer_flatten = Flatten()(layer_3)
         layer_4 = Dense(784, activation ='relu')(layer_flatten)
         layer_4 = Dropout(0.3)(layer_4)
-        output_layer = Dense(4,activation='softmax')(layer_4)
+        output_layer = Dense(4,activation='sigmoid')(layer_4)
 
         self._model = Model(input_layer,output_layer)
-        self._model.compile(optimizer = 'adam' , loss = 'categorical_crossentropy',metrics = ['accuracy'])
+        self._model.compile(optimizer = 'adam' , loss = 'binary_crossentropy',metrics = ['accuracy'])
         self._model.summary()
 
     def train(self, X_train,Y_train,X_test,Y_test,batchsize,epochs,checkpoint_path):
 
-        #checkpoint_dir = os.path.dirname(checkpoint_path)
+        checkpoint_dir = os.path.dirname(checkpoint_path)
 
         # Create checkpoint callback
+        print("checkpoint",checkpoint_path)
         cp_callback = tf.keras.callbacks.ModelCheckpoint(checkpoint_path,
                                             save_weights_only=True,
                                             verbose=1,period=1)
