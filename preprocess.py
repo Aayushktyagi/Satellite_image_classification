@@ -23,6 +23,11 @@ class Preprosess(object):
         self.X_train = self.X_train.reshape(self.X_train.shape[0] , 28, 28, 4)
         self.X_test = self.X_test.reshape(self.X_test.shape[0] , 28, 28, 4)
 
+        #Normalizing data
+        self.X_train = self.X_train[:200000] / 255.0
+        self.Y_train = self.Y_train[:200000]
+        self.X_test = self.X_test /255.0
+        
         return self.X_train,self.Y_train,self.X_test,self.Y_test
 
     def visualize_data(self):

@@ -29,7 +29,7 @@ if __name__ == "__main__":
     parser.add_argument('--visualize_data', help = 'set true to visualize data',default=False)
     parser.add_argument('--mode' , choices = ['train','inference'],default = 'train')
     parser.add_argument('--output' , help= 'path checkpoints will be saved',default='./weights/')
-    parser.add_argument('--model_name',choices=['ConvNet','ResNet50','Xception','MobileNet','DenseNet121'],default='ConvNet')
+    parser.add_argument('--model_name',choices=['ConvNet'],default='ConvNet')
     parser.add_argument('--batch_size',help = 'Select batch size int value',type= int,default=16)
     args = parser.parse_args()
     process(args)
