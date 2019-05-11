@@ -1,4 +1,4 @@
-# Satellite image classification
+# Satellite image classification(Incomplete)
 ## Image classification on sat4 and sat 6 dataset
 
 ## Dataset

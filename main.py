@@ -20,6 +20,8 @@ def process(args):
     if args.visualize_data == 'True':
         Prep.visualize_data()
     model.train_model(X_train,Y_train,X_test,Y_test,args.mode,args.epochs,args.batch_size,args.model_name,args.output)
+    #Save model
+    model.save(args.output + 'Sat_classification.h5')
 
 
 if __name__ == "__main__":
