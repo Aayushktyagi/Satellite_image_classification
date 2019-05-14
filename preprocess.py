@@ -11,6 +11,17 @@ import matplotlib.pyplot as plt
 class Preprosess(object):
     def __init__(self,datapath):
         self.datapath = datapath
+    def load_testdata(self):
+        '''
+        load test dataset for test.py and metrics.py
+        '''
+
+        self.data = sio.loadmat(self.datapath)
+        self.X_test = self.data['test_x'].transpose()
+        self.Y_test = self.data['test_y'].transpose()
+        self.X_test = self.X_test.reshape(self.X_test.shape[0] , 28, 28, 4)
+
+        return self.X_test , self.Y_test
 
     def load_dataset(self):
         self.data = sio.loadmat(self.datapath)
@@ -24,10 +35,11 @@ class Preprosess(object):
         self.X_test = self.X_test.reshape(self.X_test.shape[0] , 28, 28, 4)
 
         #Normalizing data
-        self.X_train = self.X_train[:200000] / 255.0
-        self.Y_train = self.Y_train[:200000]
-        self.X_test = self.X_test /255.0
-        
+        self.X_train = self.X_train[:100000] / 255.0
+        self.Y_train = self.Y_train[:100000]
+        self.X_test = self.X_test[:5000] /255.0
+        self.Y_test = self.Y_test[:5000]
+
         return self.X_train,self.Y_train,self.X_test,self.Y_test
 
     def visualize_data(self):

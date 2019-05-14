@@ -20,8 +20,9 @@ def train_model(X_train,Y_train,X_test,Y_test,mode,epochs,batch_size,model_name 
         if model_name == 'ConvNet':
             print("Choosen model ConvNet")
             Convnet = ConvNet()
-            Convnet.train(X_train,Y_train,X_test,Y_test,batch_size,epochs,checkpoint_path)
+            model = Convnet.train(X_train,Y_train,X_test,Y_test,batch_size,epochs,checkpoint_path)
             Convnet.showloss()
+            return model
 
         else:
             raise ValueError("Select Correct model")

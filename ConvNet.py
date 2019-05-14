@@ -35,10 +35,11 @@ class ConvNet(object):
         checkpoint_dir = os.path.dirname(checkpoint_path)
 
         # Create checkpoint callback
+        checkpoint_path = checkpoint_path + "cp.ckpt"
         print("checkpoint",checkpoint_path)
         cp_callback = tf.keras.callbacks.ModelCheckpoint(checkpoint_path,
                                             save_weights_only=True,
-                                            verbose=1,period=1)
+                                            verbose=1)
         self._model.fit(X_train,Y_train,
                         batch_size = batchsize,
                         epochs = epochs,
@@ -46,11 +47,13 @@ class ConvNet(object):
                                             Y_test),
                         callbacks = [cp_callback])
 
+        return self._model
+
     def showloss(self):
         # loss plot
         plt.subplot(2,1,1)
         plt.plot(self._model.history.history['loss'])
-        plt.plot(self._model.history.hostory['val_loss'])
+        plt.plot(self._model.history.history['val_loss'])
         plt.title('Model loss')
         plt.xlabel('epochs')
         plt.ylabel('loss')
@@ -61,7 +64,7 @@ class ConvNet(object):
         plt.plot(self._model.history.history['acc'])
         plt.plot(self._model.history.history['val_acc'])
         plt.title('Accuracy')
-        plt.xlable('epochs')
+        plt.xlabel('epochs')
         plt.ylabel('accuracy')
         plt.legend(['Train','Validation'] , loc = 'upper left')
         plt.show()
