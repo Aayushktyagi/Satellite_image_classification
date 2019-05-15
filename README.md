@@ -1,14 +1,14 @@
 # Satellite image classification(Incomplete)
 ## Image classification on sat4 and sat 6 dataset
 
-##Requirement
+## Requirement
 `python3`
 
 `tensorflow-gpu==1.13.1`
 
 `numpy`
 
-##Usage
+## Usage
 # Training
 ```bash
 python3 main.py --datapath ./SAT-4_and_SAT-6_datasets/sat-4-full.mat --epochs 16 --visualize_data False --mode train --output ./weights/ --batch_size 16
