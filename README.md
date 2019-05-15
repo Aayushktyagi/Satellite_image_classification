@@ -3,27 +3,39 @@
 
 ##Requirement
 `python3`
+
 `tensorflow-gpu==1.13.1`
+
 `numpy`
+
 ##Usage
 # Training
 ```bash
 python3 main.py --datapath ./SAT-4_and_SAT-6_datasets/sat-4-full.mat --epochs 16 --visualize_data False --mode train --output ./weights/ --batch_size 16
 ```
 > --datapath : path to sat 4/sat6 dataset
+
 > --epochs : Number of epochs for training the model
+
 > --visualize_data : Option to visualize dataset
+
 > -- mode : Two modes Train or Test
+
 > -- output : path to output dir where models will be saved
+
 > -- --batch_size : batchsize for model training
+
 # Testing
 
 ```bash
 python3 test.py --model_path ./weights/ --data_path ./SAT-4_and_SAT-6_datasets/sat-4-full.mat --mode predict --show_metrics True
 ```
 > --model_path : Path to saved model : default  ./weights/
+
 > --data_path : Path to dataset : default ./SAT-4_and_SAT-6_datasets/sat-4-full.mat
+
 > --mode : Select mode between predict and evaluate using trained model
+
 > --show_metrics : To visualize confusion matrix
 
 
