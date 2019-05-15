@@ -61,12 +61,17 @@ Class labesl : `building`,`barren land`,`trees`,`grassland`,`roads`,`water`
 
 ![Classwise distribution test](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Test_data_sat6.png)
 
-##Training
+## Training
+![Loss](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Sat_image_loss.png)
 
-##Testing
+![Accuracy graph](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Sat_image_accuracy.png)
 
-##Evaluation
+## Testing
+![Test image and prediction](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Test_image.png)
 
-##Conclusion
+## Evaluation
+![Confusion Matrix](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Confusion_matrix.png)
 
-##Refrences
+## Conclusion
+
+## Refrences
