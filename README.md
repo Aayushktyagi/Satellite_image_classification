@@ -43,6 +43,8 @@ python3 test.py --model_path ./weights/ --data_path ./SAT-4_and_SAT-6_datasets/s
 Sat 4  and Sat 6 dataset contain 4 channel(r,g,b,near Infrared) Satellite images.Each image 28x28 pixels.Sat 4 and Sat 6 contain 4 and 6 label classes respectively.
 Dataset can be downloaded from [here](https://www.kaggle.com/crawford/deepsat-sat4).
 
+![sample image](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/sat_img.png)
+
 - Sat4 dataset
 Class wise distribution of train(400000) and test images(100000) is as following:
 
@@ -71,7 +73,7 @@ Class labesl : `building`,`barren land`,`trees`,`grassland`,`roads`,`water`
 ![Accuracy graph](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Sat_image_accuracy.png)
 
 ## Testing
-- Test image and label prediction 
+- Test image and label prediction
 
 ![Test image and prediction](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Test_image.png)
 
