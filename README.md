@@ -72,6 +72,8 @@ Class labesl : `building`,`barren land`,`trees`,`grassland`,`roads`,`water`
 ## Evaluation
 ![Confusion Matrix](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Confusion_matrix.png)
 
+![Classification report](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Classification_report.png)
+
 ## Conclusion
 
 ## Refrences
