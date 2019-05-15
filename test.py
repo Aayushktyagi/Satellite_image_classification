@@ -82,8 +82,8 @@ def load_model(args):
     #load test dataset
     Prep = Preprosess(args.data_path)
     test_images , test_labels = Prep.load_testdata()
-    if args.mode == 'accuracy':
-        loss, acc = accuracy(model,test_images,test_labels)
+    if args.mode == 'evaluate':
+        loss, acc = evaluate_model(model,test_images,test_labels)
         print("Restored model, accuracy: {:5.2f}%".format(100*acc))
     else:
         predict(model, test_images , test_labels)
@@ -95,7 +95,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_path",help = "Model path",default = './weights/')
     parser.add_argument("--data_path",help = "Path to image",default = './SAT-4_and_SAT-6_datasets/sat-4-full.mat')
-    parser.add_argument("--mode",choices=['predict','accuracy'],default = 'predict')
+    parser.add_argument("--mode",choices=['predict','evaluate'],default = 'predict')
     parser.add_argument("--show_metrics",default = 'False')
     args = parser.parse_args()
     load_model(args)
