@@ -1,4 +1,4 @@
-# Satellite image classification(Incomplete)
+# Satellite image classification
 ## Image classification on sat4 and sat 6 dataset
 
 ## Requirement
@@ -62,23 +62,32 @@ Class labesl : `building`,`barren land`,`trees`,`grassland`,`roads`,`water`
 ![Classwise distribution test](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Test_data_sat6.png)
 
 ## Training
-- Model loss (train and test )
+### Model loss
+
 ![Loss](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Sat_image_loss.png)
 
-- Model accuracy (train and test )
+### Model accuracy
+
 ![Accuracy graph](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Sat_image_accuracy.png)
 
 ## Testing
+- Test image and label prediction 
+
 ![Test image and prediction](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Test_image.png)
 
 ## Evaluation
-- Confusion matrix on test set
+
+### Confusion matrix on test set
+
 ![Confusion Matrix](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Confusion_matrix.png)
 
-- classification report on test set
+### classification report on test set
+
 ![Classification report](https://github.com/Aayushktyagi/Satellite_image_classification/blob/master/Results/Classification_report.png)
 
 ## Conclusion
+
 Hence we acheived 98% test accuracy on Sat 4 dataset using convolutional neural net after 15 epochs . Dataset contains 4 channel images standard classification architecture like ResNet50 , DenseNet121 cannot be used . For a small model performance is pretty cool!! What say??
+
 ## Refrences
 https://www.kaggle.com/arpandhatt/satellite-image-classification
