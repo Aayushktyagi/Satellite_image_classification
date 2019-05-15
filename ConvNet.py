@@ -36,7 +36,7 @@ class ConvNet(object):
 
         # Create checkpoint callback
         checkpoint_path = checkpoint_path + "cp.ckpt"
-        print("checkpoint",checkpoint_path)
+        # print("checkpoint",checkpoint_path)
         cp_callback = tf.keras.callbacks.ModelCheckpoint(checkpoint_path,
                                             save_weights_only=True,
                                             verbose=1)
